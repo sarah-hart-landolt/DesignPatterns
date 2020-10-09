@@ -19,18 +19,31 @@ namespace Open_Closed
         Yuge
     }
 
+    public enum Price
+    {
+        Cheap,
+        Affordable,
+        Expensive,
+        Ridiculous
+    }
+
+
     public class Product
     {
         public string Name;
         public Color Color;
         public Size Size;
+        public Price Price;
 
-        public Product(string name, Color color, Size size)
+
+        public Product(string name, Color color, Size size, Price price)
         {
             Name = name ??
                 throw new ArgumentNullException(paramName: nameof(name));
             Color = color;
             Size = size;
+            Price = price; 
+
         }
     }
 
@@ -64,25 +77,30 @@ namespace Open_Closed
 
     // we introduce two new interfaces that are open for extension
 
+    // use the specification pattern: create interface 
     public interface ISpecification<T>
     {
         bool IsSatisfied(Product p);
     }
 
+    // set up filter interface pulling in ISpecficiation pattern
     public interface IFilter<T>
     {
         IEnumerable<T> Filter(IEnumerable<T> items, ISpecification<T> spec);
     }
 
+    // create a class of ColorSpecification that uses ISpecification
     public class ColorSpecification : ISpecification<Product>
     {
         private Color color;
 
+        // set up constructor
         public ColorSpecification(Color color)
         {
             this.color = color;
         }
 
+        // specifices the method inherited from ISpecficiation 
         public bool IsSatisfied(Product p)
         {
             return p.Color == color;
@@ -103,27 +121,51 @@ namespace Open_Closed
             return p.Size == size;
         }
     }
+    //my added bit
+    public class PriceSpecification : ISpecification<Product>
+    {
+        private Price price;
+
+        public PriceSpecification(Price price)
+        {
+            this.price = price;
+        }
+
+        public bool IsSatisfied(Product p)
+        {
+            return p.Price== price;
+        }
+    }
 
     // combinator
+    // making a possibility to filter by 2 Specifications instead of just color or size. Inherits  ISpecification interface
+    // i edited to add 3 specifications
     public class AndSpecification<T> : ISpecification<T>
     {
+        // making 2 specificaitons 
         private ISpecification<T> first,
-        second;
+        second, third; 
 
-        public AndSpecification(ISpecification<T> first, ISpecification<T> second)
+        // constructor of this class
+        public AndSpecification(ISpecification<T> first, ISpecification<T> second, ISpecification<T> third)
         {
             this.first = first ??
                 throw new ArgumentNullException(paramName: nameof(first));
             this.second = second ??
                 throw new ArgumentNullException(paramName: nameof(second));
+            this.third = third ??
+                throw new ArgumentNullException(paramName: nameof(second));
         }
 
+        // from ISpecification, returning the product if the first and second spec are correct
         public bool IsSatisfied(Product p)
         {
-            return first.IsSatisfied(p) && second.IsSatisfied(p);
+            return first.IsSatisfied(p) && second.IsSatisfied(p) && third.IsSatisfied(p);
         }
     }
 
+    // creating class of Filter that doesn't violate open/closed principle. Inherits from IFilter interface 
+    //(which takes argument Product items and Ispecification interface  
     public class BetterFilter : IFilter<Product>
     {
         public IEnumerable<Product> Filter(IEnumerable<Product> items, ISpecification<Product> spec)
@@ -137,11 +179,13 @@ namespace Open_Closed
     {
         static void Main(string[] args)
         {
-            var apple = new Product("Apple", Color.Green, Size.Small);
-            var tree = new Product("Tree", Color.Green, Size.Large);
-            var house = new Product("House", Color.Blue, Size.Large);
+            var apple = new Product("Apple", Color.Green, Size.Small, Price.Cheap);
+            var tree = new Product("Tree", Color.Green, Size.Large, Price.Affordable);
+            var house = new Product("House", Color.Blue, Size.Large, Price.Expensive);
+            var car = new Product("Car", Color.Red, Size.Large, Price.Expensive);
 
-            Product[] products = { apple, tree, house };
+
+            Product[] products = { apple, tree, house, car};
 
             var pf = new ProductFilter();
             WriteLine("Green products (old):");
@@ -151,6 +195,8 @@ namespace Open_Closed
             // ^^ BEFORE
 
             // vv AFTER
+            // using the better filter// filter takes array of products and color specification as green as argument. 
+            // loop over each product and return the Name of product that matches that specific color Green
             var bf = new BetterFilter();
             WriteLine("Green products (new):");
             foreach (var p in bf.Filter(products, new ColorSpecification(Color.Green)))
@@ -160,11 +206,12 @@ namespace Open_Closed
             foreach (var p in bf.Filter(products, new SizeSpecification(Size.Large)))
                 WriteLine($" - {p.Name} is large");
 
-            WriteLine("Large blue items");
+            // using the 
+            WriteLine("Large blue, expensive items");
             foreach (var p in bf.Filter(products,
-                    new AndSpecification<Product>(new ColorSpecification(Color.Blue), new SizeSpecification(Size.Large))))
+                    new AndSpecification<Product>(new ColorSpecification(Color.Blue), new SizeSpecification(Size.Large), new PriceSpecification(Price.Expensive))))
             {
-                WriteLine($" - {p.Name} is big and blue");
+                WriteLine($" - {p.Name} is big, blue and expensive");
             }
         }
     }
