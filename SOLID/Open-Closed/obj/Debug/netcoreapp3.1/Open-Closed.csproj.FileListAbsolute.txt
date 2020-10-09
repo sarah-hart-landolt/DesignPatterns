@@ -1,0 +1,13 @@
+C:\Users\sarah\workspace\DesignPatterns\SOLID\Open-Closed\obj\Debug\netcoreapp3.1\Open-Closed.csprojAssemblyReference.cache
+C:\Users\sarah\workspace\DesignPatterns\SOLID\Open-Closed\obj\Debug\netcoreapp3.1\Open-Closed.AssemblyInfoInputs.cache
+C:\Users\sarah\workspace\DesignPatterns\SOLID\Open-Closed\obj\Debug\netcoreapp3.1\Open-Closed.AssemblyInfo.cs
+C:\Users\sarah\workspace\DesignPatterns\SOLID\Open-Closed\obj\Debug\netcoreapp3.1\Open-Closed.csproj.CoreCompileInputs.cache
+C:\Users\sarah\workspace\DesignPatterns\SOLID\Open-Closed\bin\Debug\netcoreapp3.1\Open-Closed.exe
+C:\Users\sarah\workspace\DesignPatterns\SOLID\Open-Closed\bin\Debug\netcoreapp3.1\Open-Closed.deps.json
+C:\Users\sarah\workspace\DesignPatterns\SOLID\Open-Closed\bin\Debug\netcoreapp3.1\Open-Closed.runtimeconfig.json
+C:\Users\sarah\workspace\DesignPatterns\SOLID\Open-Closed\bin\Debug\netcoreapp3.1\Open-Closed.runtimeconfig.dev.json
+C:\Users\sarah\workspace\DesignPatterns\SOLID\Open-Closed\bin\Debug\netcoreapp3.1\Open-Closed.dll
+C:\Users\sarah\workspace\DesignPatterns\SOLID\Open-Closed\bin\Debug\netcoreapp3.1\Open-Closed.pdb
+C:\Users\sarah\workspace\DesignPatterns\SOLID\Open-Closed\obj\Debug\netcoreapp3.1\Open-Closed.dll
+C:\Users\sarah\workspace\DesignPatterns\SOLID\Open-Closed\obj\Debug\netcoreapp3.1\Open-Closed.pdb
+C:\Users\sarah\workspace\DesignPatterns\SOLID\Open-Closed\obj\Debug\netcoreapp3.1\Open-Closed.genruntimeconfig.cache
