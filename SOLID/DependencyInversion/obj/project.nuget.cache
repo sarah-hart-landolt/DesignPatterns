@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "yOohjZgltpzWc9GMNLinNfNEjyT8yV+pDr7PWSIamleMGLSuib6VCEvXdDljnGdkctGsNicIRtpdanPWwCKx0g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sarah\\workspace\\DesignPatterns\\SOLID\\DependencyInversion\\DependencyInversion.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sarah\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
