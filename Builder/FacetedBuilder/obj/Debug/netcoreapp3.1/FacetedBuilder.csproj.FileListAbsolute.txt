@@ -1,0 +1,13 @@
+C:\Users\sarah\workspace\DesignPatterns\Builder\FacetedBuilder\bin\Debug\netcoreapp3.1\FacetedBuilder.exe
+C:\Users\sarah\workspace\DesignPatterns\Builder\FacetedBuilder\bin\Debug\netcoreapp3.1\FacetedBuilder.deps.json
+C:\Users\sarah\workspace\DesignPatterns\Builder\FacetedBuilder\bin\Debug\netcoreapp3.1\FacetedBuilder.runtimeconfig.json
+C:\Users\sarah\workspace\DesignPatterns\Builder\FacetedBuilder\bin\Debug\netcoreapp3.1\FacetedBuilder.runtimeconfig.dev.json
+C:\Users\sarah\workspace\DesignPatterns\Builder\FacetedBuilder\bin\Debug\netcoreapp3.1\FacetedBuilder.dll
+C:\Users\sarah\workspace\DesignPatterns\Builder\FacetedBuilder\bin\Debug\netcoreapp3.1\FacetedBuilder.pdb
+C:\Users\sarah\workspace\DesignPatterns\Builder\FacetedBuilder\obj\Debug\netcoreapp3.1\FacetedBuilder.csprojAssemblyReference.cache
+C:\Users\sarah\workspace\DesignPatterns\Builder\FacetedBuilder\obj\Debug\netcoreapp3.1\FacetedBuilder.AssemblyInfoInputs.cache
+C:\Users\sarah\workspace\DesignPatterns\Builder\FacetedBuilder\obj\Debug\netcoreapp3.1\FacetedBuilder.AssemblyInfo.cs
+C:\Users\sarah\workspace\DesignPatterns\Builder\FacetedBuilder\obj\Debug\netcoreapp3.1\FacetedBuilder.csproj.CoreCompileInputs.cache
+C:\Users\sarah\workspace\DesignPatterns\Builder\FacetedBuilder\obj\Debug\netcoreapp3.1\FacetedBuilder.dll
+C:\Users\sarah\workspace\DesignPatterns\Builder\FacetedBuilder\obj\Debug\netcoreapp3.1\FacetedBuilder.pdb
+C:\Users\sarah\workspace\DesignPatterns\Builder\FacetedBuilder\obj\Debug\netcoreapp3.1\FacetedBuilder.genruntimeconfig.cache
